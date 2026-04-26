@@ -1,0 +1,298 @@
+<!-- NAVBAR -->
+<nav class="topbar">
+  <a class="brand" href="#home">AS</a>
+  <div class="nav-links">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#work">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="home" class="hero-section">
+  <div id="tsparticles"></div>
+
+  <div class="hero-inner">
+    <div class="hero-photo">
+      <div class="photo-frame-wrapper">
+        <svg viewBox="0 0 280 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- hexagon frame -->
+          <polygon points="140,12 252,74 252,206 140,268 28,206 28,74" stroke="#10b981" stroke-width="2.5" fill="#1f2937" stroke-linejoin="round"/>
+          <!-- inner offset hexagon -->
+          <polygon points="140,34 234,87 234,193 140,246 46,193 46,87" stroke="#10b981" stroke-width="1" fill="none" opacity="0.3" stroke-linejoin="round"/>
+        </svg>
+        <div class="photo-initials">AS</div>
+      </div>
+    </div>
+
+    <div class="hero-text">
+      <h1>👋 I'm Aditya Sharma</h1>
+      <p>
+        Senior Backend Engineer with 5+ years building high-scale distributed systems
+        serving 2.5M+ users. Expert in microservices, AI/LLM products, and backend
+        infrastructure — building at scale at Coding Ninjas.
+      </p>
+      <div class="hero-cta">
+        <a href="mailto:adityasharma965@gmail.com" class="btn-primary">Email me</a>
+        <span>or</span>
+        <a href="https://www.linkedin.com/in/adityash201" target="_blank" rel="noopener" class="btn-secondary">View LinkedIn ↗</a>
+        <span>or</span>
+        <a href="https://drive.google.com/file/d/1C2VRdz8ZJPEWwVhHtr2J8SIwBObYuna6/view?usp=sharing" target="_blank" rel="noopener" class="btn-secondary">Download Resume ↓</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about-section">
+  <div class="about-inner">
+    <div class="section-header fade-target">
+      <span class="bracket">&lt; / &gt;</span>
+      <h2>About</h2>
+      <span class="bracket">&gt;</span>
+    </div>
+
+    <div class="about-content">
+      <div class="about-text fade-target">
+        <p>
+          I'm a Senior Backend Engineer based in Delhi, India, with 5+ years of experience building
+          resilient, high-throughput systems at Coding Ninjas — an edtech platform serving 2.5M+ users.
+        </p>
+        <p>
+          My work spans the full stack of backend engineering: distributed compiler infrastructure
+          processing 200K+ daily code submissions, AI product suites (LLM teaching assistants,
+          voice-to-code, knowledge-graph tutors), and large-scale zero-downtime platform migrations.
+        </p>
+        <p>
+          I care deeply about performance, reliability, and developer productivity. When I'm not optimizing
+          queue throughput or shipping AI features, I'm mentoring engineers and thinking hard about
+          system design tradeoffs that compound over time.
+        </p>
+        <p class="about-stack">
+          <span>Primary stack:</span> Java · Spring Boot · Ruby on Rails · PostgreSQL · Redis · AWS · Angular
+        </p>
+      </div>
+
+      <div class="about-tags fade-target">
+        <div class="tag-group">
+          <span class="tag-label">Open to</span>
+          <div class="tags">
+            <span>Senior Backend Roles</span>
+            <span>Staff Engineer</span>
+            <span>Distributed Systems</span>
+            <span>AI/ML Engineering</span>
+          </div>
+        </div>
+        <div class="tag-group">
+          <span class="tag-label">Location</span>
+          <div class="tags">
+            <span>Delhi, India</span>
+            <span>Remote</span>
+            <span>Hybrid</span>
+          </div>
+        </div>
+        <div class="tag-group">
+          <span class="tag-label">Education</span>
+          <div class="tags">
+            <span>BTech IT — GGSIPU · 8.36 CGPA</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPACT STATS -->
+<section class="impact-section">
+  <div class="impact-inner">
+    @for (stat of impactStats; track stat.label) {
+      <div class="impact-card fade-target">
+        <span class="impact-value">{{ stat.value }}</span>
+        <span class="impact-label">{{ stat.label }}</span>
+      </div>
+    }
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="timeline-section">
+  <div class="section-header fade-target">
+    <span class="bracket">&lt; / &gt;</span>
+    <h2>Experience</h2>
+    <span class="bracket">&gt;</span>
+  </div>
+
+  <ul class="timeline">
+    @for (row of timelineRows; track $index; let last = $last) {
+      <li>
+        <div class="tl-left">
+          @if (row.left) {
+            <div class="tl-card fade-target">
+              <span class="tl-year">{{ row.left.year }}</span>
+              <strong class="tl-title">{{ row.left.title }}</strong>
+              <span class="tl-sub">{{ row.left.subtitle }}</span>
+              <p class="tl-desc">{{ row.left.description }}</p>
+            </div>
+          }
+        </div>
+
+        <div class="tl-middle">
+          <div class="tl-dot"></div>
+          @if (!last) {
+            <div class="tl-line"></div>
+          }
+        </div>
+
+        <div class="tl-right">
+          @if (row.right) {
+            <div class="tl-card fade-target">
+              <span class="tl-year">{{ row.right.year }}</span>
+              <strong class="tl-title">{{ row.right.title }}</strong>
+              <span class="tl-sub">{{ row.right.subtitle }}</span>
+              <p class="tl-desc">{{ row.right.description }}</p>
+            </div>
+          }
+        </div>
+      </li>
+    }
+  </ul>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="skills-section">
+  <div class="skills-inner">
+    <div class="section-header fade-target">
+      <span class="bracket">&lt; / &gt;</span>
+      <h2>Skills</h2>
+      <span class="bracket">&gt;</span>
+    </div>
+
+    <div class="skill-categories">
+      @for (group of skillGroups; track group.category) {
+        <div class="skill-category fade-target">
+          <h3 [class]="'cat-' + group.colorClass">{{ group.category }}</h3>
+          <div class="skill-rows">
+            @for (skill of group.skills; track skill.name) {
+              <div class="skill-row-wrap">
+                <div class="skill-row">
+                  <span class="skill-name">{{ skill.name }}</span>
+                  <span class="skill-score">{{ skill.level }}/10</span>
+                </div>
+                <progress
+                  [class]="'skill-bar cat-' + group.colorClass"
+                  [attr.data-level]="skill.level"
+                  value="0"
+                  max="10">
+                </progress>
+              </div>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="work" class="projects-section">
+  <div class="projects-inner">
+    <div class="section-header fade-target">
+      <span class="bracket">&lt; / &gt;</span>
+      <h2>Projects</h2>
+      <span class="bracket">&gt;</span>
+    </div>
+
+    <div class="project-grid">
+      @for (study of caseStudies; track study.title) {
+        <div class="project-card fade-target">
+          <div class="card-header">
+            <p class="card-eyebrow">{{ study.eyebrow }}</p>
+            <h3>{{ study.title }}</h3>
+          </div>
+          <div class="card-body">
+            <p class="card-summary">{{ study.summary }}</p>
+            <p class="card-outcome">
+              <span class="outcome-label">Result:</span> {{ study.outcome }}
+            </p>
+            <div class="card-tags">
+              @for (tech of study.stack; track tech) {
+                <span>#{{ tech }}</span>
+              }
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<div class="contact-wrapper">
+  <section id="contact" class="contact-section">
+    <div class="contact-form-col fade-target">
+      <h2>GET IN TOUCH</h2>
+      <form (submit)="$event.preventDefault(); submitForm($event)">
+        <!-- honeypot — bots fill this, humans don't -->
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+        <div>
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" autocomplete="name" required>
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required>
+        </div>
+        <div>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+        </div>
+
+        @if (formStatus() === 'success') {
+          <p class="form-feedback success">Message sent! I'll get back to you soon.</p>
+        }
+        @if (formStatus() === 'error') {
+          <p class="form-feedback error">{{ formError() }}</p>
+        }
+
+        <button type="submit" [disabled]="formStatus() === 'submitting' || formStatus() === 'success'">
+          {{ formStatus() === 'submitting' ? 'Sending…' : formStatus() === 'success' ? 'Sent ✓' : 'Submit' }}
+        </button>
+      </form>
+    </div>
+
+    <div class="contact-info-col fade-target">
+      <h2>CONTACT INFO</h2>
+      <div class="info-items">
+        <div class="info-item">
+          <i class="info-icon">✉</i>
+          <a href="mailto:adityasharma965@gmail.com">adityasharma965&#64;gmail.com</a>
+        </div>
+        <div class="info-item">
+          <i class="info-icon">in</i>
+          <a href="https://www.linkedin.com/in/adityash201" target="_blank" rel="noopener">linkedin.com/in/adityash201</a>
+        </div>
+        <div class="info-item">
+          <i class="info-icon">📍</i>
+          <span>Delhi, India</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© ADITYA SHARMA. ALL RIGHTS RESERVED</p>
+  </footer>
+</div>
+
+<!-- SCROLL TO TOP -->
+<a
+  href="#home"
+  class="scroll-top-btn"
+  [class.hidden]="!showScrollTop()"
+  aria-label="Scroll to top"
+  title="Back to top"
+>▲</a>

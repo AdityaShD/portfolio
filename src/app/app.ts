@@ -1,4 +1,5 @@
-import { Component, AfterViewInit, signal } from '@angular/core';
+import { Component, AfterViewInit, signal, PLATFORM_ID, inject } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { tsParticles } from '@tsparticles/engine';
 import { loadSlim } from '@tsparticles/slim';
 
@@ -19,6 +20,7 @@ export class App implements AfterViewInit {
   protected readonly formStatus = signal<'idle' | 'submitting' | 'success' | 'error'>('idle');
   protected readonly formError = signal('');
   private cooldownTimer: ReturnType<typeof setTimeout> | null = null;
+  private readonly platformId = inject(PLATFORM_ID);
 
   protected async submitForm(event: SubmitEvent): Promise<void> {
     event.preventDefault();
@@ -248,6 +250,7 @@ export class App implements AfterViewInit {
   ];
 
   async ngAfterViewInit(): Promise<void> {
+    if (!isPlatformBrowser(this.platformId)) return;
     await this.initParticles();
     this.initSkillBars();
     this.initFadeIns();

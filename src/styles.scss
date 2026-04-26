@@ -715,7 +715,8 @@ footer {
 }
 
 // ─── FADE-IN ANIMATION ─────────────────────────────────────
-.fade-target {
+// js-ready is added to <body> once Angular bootstraps in the browser
+body.js-ready .fade-target {
   opacity: 0;
   transform: translateY(16px);
   transition: opacity 0.65s ease, transform 0.65s ease;

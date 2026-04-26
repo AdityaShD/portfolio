@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aditya-sharma-portfolio.web.app/sitemap.xml
